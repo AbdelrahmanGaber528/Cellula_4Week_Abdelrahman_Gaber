@@ -13,3 +13,6 @@ class Handler(ABC):
     @abstractmethod
     def handle(self, query: str, history: list) -> Response:
         """Process a query and return a Response."""
+        
+    def stream(self, query: str, history: list):
+        yield self.handle(query, history).text

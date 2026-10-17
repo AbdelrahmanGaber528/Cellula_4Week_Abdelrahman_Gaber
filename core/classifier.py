@@ -36,4 +36,4 @@ def classify(user_query):
     except Exception:
         pass
     
-    return heuristic(query)
+    return heuristic(user_query)
