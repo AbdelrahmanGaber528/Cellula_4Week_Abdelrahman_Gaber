@@ -20,6 +20,7 @@ class ExplainHandler(Handler):
         ])
         self.chain = prompt | get_model() | StrOutputParser()
 
+
     def handle(self, query: str, history: list) -> Response:
         
         text = self.chain.invoke({"query": query, "history": history})

@@ -27,7 +27,7 @@ with st.sidebar:
         memory.clear()
         st.rerun()
         
-    with st.expander(f"Memory ({len(memory.get_history())} messages sent to LLM)"):
+    with st.expander(f"({len(memory.get_history())} messages sent to LLM)"):
         for m in memory.get_history():
             st.markdown(f"**{m.type}:** {m.content[:80]}...")
 
@@ -44,7 +44,7 @@ if query := st.chat_input("Welcome, how can I help you, sir?"):
         
     with st.chat_message("assistant"):
         try:
-            with st.spinner("Thinking..."):
+            with st.spinner("Thinking..."): 
                 intent, stream = router.route_stream(query, memory.get_history())
                 first = next(stream, "") 
 

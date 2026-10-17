@@ -3,6 +3,7 @@ from config import MAX_HISTORY_TURNS
 
 
 class Memory:
+    
     def __init__(self, max_turns: int = MAX_HISTORY_TURNS):
         self.messages: list[BaseMessage] = []
         self.max_turns = max_turns
