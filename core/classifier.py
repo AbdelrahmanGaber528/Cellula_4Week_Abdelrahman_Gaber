@@ -7,7 +7,7 @@ from langchain_core.output_parsers import StrOutputParser
 VALID_INTENTS = ("explain", "generate")
 
 prompt = (Path(__file__).parent.parent / "prompts" / "classifier.txt").read_text()
-chain = ChatPromptTemplate.from_template(prompt) | get_llm() | StrOutputParser()
+chain = ChatPromptTemplate.from_template(prompt) | get_model() | StrOutputParser()
 
 
 # this is to ensure the output of model is 1 classification label
